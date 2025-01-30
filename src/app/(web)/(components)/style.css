@@ -1,0 +1,14 @@
+.text-animation-infinite-scroll{
+    white-space: nowrap;
+    animation: infinite-scroll 2s linear infinite;
+}
+
+@keyframes infinite-scroll {
+    0%{
+        transform: translateX(10%);
+    }
+    100%{
+        transform: translateX(-10%);
+    }
+    
+}
