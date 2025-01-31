@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from "react";
-import Categories from "./_components/Categories";
+import Categories from "./_components/categories";
 import AddNewCategory from "./_components/Modals";
 import { Foods } from "./_components/Foods";
 // import { useAuthFetch } from "./_components/usefetchData";

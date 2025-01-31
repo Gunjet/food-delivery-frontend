@@ -4,7 +4,7 @@ import Header from "./(components)/Header"
 import Footer from "./(components)/Footer"
 import { useEffect, useState } from "react";
 import FoodCard from "../admin/foodmenu/_components/FoodCard";
-import Categories from "../admin/foodmenu/_components/Categories";
+// import Categories from "../admin/foodmenu/_components/Categories";
 
 type CategoryType = {
     categoryName: string;
