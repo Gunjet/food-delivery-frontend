@@ -1,44 +1,53 @@
+import { useState } from "react";
 import { IoCloseOutline } from "react-icons/io5";
-  
-type AddNewCategoryProps = {
-    onClose: () => void;
-    onAddAddress: (categoryName: string) => void;
+
+interface AddressModalProps {
+  onClose: () => void; 
+  onSave: (address: string) => void; 
+}
+
+export const AddressModal = ({ onClose, onSave }: AddressModalProps) => {
+  const [address, setAddress] = useState<string>("");
+
+  const handleSave = () => {
+    onSave(address); 
+    onClose(); 
   };
 
-export default function DeliveryAddress(){
-    return(
-        <div className="fixed bg-[#00000011] w-screen h-full flex justify-center items-center">
-          <div className="bg-white rounded-lg p-5">
-            <div className="flex gap-[250px] items-center">
-              <p className="text-[18px] font-semibold">Add new category</p>
-              <div
-                className="rounded-full bg-[#F4F4F5] p-3 cursor-pointer"
-                // onClick={onClose}
-              >
-                <IoCloseOutline className="text-[20px]" />
-              </div>
-            </div>
-    
-            {/* <form onSubmit={handleSubmit} className="mt-8"> */}
-            <form className="mt-8">
-              <p className="text-[14px]">Category name</p>
-              <input
-                type="text"
-                className="rounded-md text-[#71717A] border-[#E4E4E7] border-[1px] px-3 pr-[270px] py-2 text-[14px] mt-2"
-                // value={categoryName}
-                // onChange={(e) => setCategoryName(e.target.value)}
-                placeholder="Type category name..."
-              />
-              <div className="mt-10 flex justify-end">
-                <button
-                  type="submit"
-                  className="bg-black rounded-md text-white px-4 py-2 text-[14px]"
-                >
-                  Add category
-                </button>
-              </div>
-            </form>
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 w-screen h-full flex justify-center items-center">
+      <div className="bg-white p-6 rounded-lg">
+        <div className="flex gap-[250px] items-center mb-5">
+        <h2 className="text-lg font-semibold mb-4">Delivery Address</h2>
+        <div
+            className="rounded-full bg-[#F4F4F5] p-3 cursor-pointer" onClick={onClose}
+          >
+            <IoCloseOutline className="text-[20px] w-[20px] h-[20px]"/>
           </div>
         </div>
-    )
-}
+
+        <input
+          type="text"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          placeholder="Please provide specific address details such as building number, entrance, and apartment number"
+          className="w-full px-3 py-2 border rounded-md mb-4"
+        />
+        <div className="flex justify-end gap-3 mt-10">
+          <button
+            onClick={onClose}
+            className="px-4 py-2 bg-white border rounded-md text-black"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={handleSave}
+            className="px-4 py-2 bg-[#18181B] text-white rounded-md"
+          >
+            Deliver here
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};

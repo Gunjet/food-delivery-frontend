@@ -62,11 +62,26 @@ export default function Home(){
          </div>
         </div>
 
+        {/* <div className="flex flex-wrap gap-5">
+          {foods.map((food) => (
+            <FoodCard key={food._id} food={food} />
+          ))}
+        </div> */}
+
+    {categories.map((category) => ( 
+    <div className="flex flex-wrap gap-5">
+       <p key={category._id} className="font-semibold text-[20px] mb-5">
+          {category.categoryName}
+       </p>
+
         <div className="flex flex-wrap gap-5">
           {foods.map((food) => (
             <FoodCard key={food._id} food={food} />
           ))}
         </div>
+    </div>
+
+))}
         </section>
         <Footer/>
         </body>

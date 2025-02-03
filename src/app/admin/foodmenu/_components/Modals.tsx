@@ -23,7 +23,7 @@ export default function AddNewCategory({ onClose, onAddCategory }: AddNewCategor
             className="rounded-full bg-[#F4F4F5] p-3 cursor-pointer"
             onClick={onClose}
           >
-            <IoCloseOutline className="text-[20px]" />
+            <IoCloseOutline className="text-[20px] w-[20px] h-[20px]" />
           </div>
         </div>
 
@@ -77,7 +77,7 @@ export function AddNewFood({ onClose, onAddFood }: AddNewFoodProps) {
             className="rounded-full bg-[#F4F4F5] p-3 cursor-pointer"
             onClick={onClose}
           >
-            <IoCloseOutline className="text-[20px]" />
+            <IoCloseOutline className="text-[20px] w-[20px] h-[20px]" />
           </div>
         </div>
 
