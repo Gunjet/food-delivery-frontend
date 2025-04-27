@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useState } from "react";
 import FoodCard from "./FoodCard";
 import { AddNewFood } from "./Modals";
